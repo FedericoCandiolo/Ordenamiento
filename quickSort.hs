@@ -6,23 +6,11 @@ Luego se aplica el Quick Sort a las dos nuevas listas, hasta que queden listas v
 
 quickSort :: (Ord a) => [a] -> [a]
 quickSort [] = []
-quickSort xs = quickSort primera_parte ++ [piv] ++ quickSort segunda_parte
+quickSort xs = (quickSort $ filter (< piv) t) ++ [piv] ++ (quickSort $ filter (>= piv) t)
     where
         piv = head xs
-        (primera_parte, segunda_parte) = separarPivote piv $ tail xs
-
-separarPivote :: (Ord a) => a -> [a] -> ([a], [a])
-separarPivote _ [] = ([], [])
-separarPivote p xs
-    | p > h = concatenar ([h], []) (separarPivote p t)
-    | otherwise = concatenar ([], [h]) (separarPivote p t)
-    where
-        h = head xs
         t = tail xs
-
-concatenar :: ([a], [a]) -> ([a], [a]) -> ([a], [a])
-concatenar (a, b) (c, d) = (a ++ c, b ++ d)
-
+        
 integers = [3, 1, -5, 2, -68, 7, 9, 11, -200, 40]
 floats = [3.15, 48.3, -98, -1.25, 6, 1.23, 6.55]
 letters = "Hello world"

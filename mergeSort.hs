@@ -9,7 +9,8 @@ mergeSort [x] = [x]
 mergeSort [x, y]
     | (x > y) = [y, x]
     | otherwise = [x, y]
-mergeSort xs = joinOrdered (mergeSort $ fst $ splitHalf xs) (mergeSort $ snd $ splitHalf xs)
+mergeSort xs = joinOrdered (mergeSort $ fst $ xs_split) (mergeSort $ snd $ xs_split)
+    where xs_split = splitAt ((length xs) `div` 2) xs    
 
 joinOrdered :: (Ord a) => [a] -> [a] -> [a]
 joinOrdered [] [] = []
@@ -18,9 +19,6 @@ joinOrdered [] ys = ys
 joinOrdered xs ys
     | head xs < head ys = head xs : (joinOrdered (tail xs) ys)
     | otherwise = head ys : (joinOrdered xs (tail ys))
-
-splitHalf :: [a] -> ([a], [a])
-splitHalf xs = splitAt ((length xs) `div` 2) xs 
 
 integers = [3, 1, -5, 2, -68, 7, 9, 11, -200, 40]
 floats = [3.15, 48.3, -98, -1.25, 6, 1.23, 6.55]
