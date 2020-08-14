@@ -2,7 +2,7 @@
 
 ### Algoritmos implementados
 
-Están implementados los algoritmos _Quick Sort, Merge Sort, Bubble Sort, Selection Sort_ y _Insertion Sort_
+Están implementados los algoritmos _Quick Sort, Merge Sort, Tree Sort, Bubble Sort, Selection Sort_ y _Insertion Sort_
 
 ### Complejidad algorítmica
 
@@ -10,6 +10,7 @@ La complejidad algorítmica, notada como **O (Big O)**, describe las complejidad
 
 Los algoritmos _Quick Sort_ y _Merge Sort_ tienen complejidad **O(n log(n))**
 Los algoritmos _Insertion Sort_, _Selection Sort_ y _Bubble Sort_ tienen complejidad **O(n^2)**
+El algoritmo _Tree Sort_ tiene con alta probablidad complejidad **O(n log(n))** y, como máximo, **O(n^2)**
 
 Al aumentar el tamaño del problema, los algoritmos con complejidad **O(n log(n))** crecen en complejidad de forma más lenta que los que tienen complejidad **O(n^2)**. Por lo tanto, los primeros algoritmos son más eficientes que los segundos.
 
@@ -20,7 +21,7 @@ Al aumentar el tamaño del problema, los algoritmos con complejidad **O(n log(n)
 Haskell permite trabajar con tipos genéricos. Podemos asegurarnos que estos tipos genéricos cumplan con ciertas condiciones, como por ejemplo Ord, que nos permite ordenar elementos de un mismo tipo, y Eq para poder comparar e igualar datos de un mismo tipo.
 
 Esto nos permite hacer nuestro código extensible. El código implementado funciona tanto para Integers, como para Floats, Chars, etc.
-Por ejemplo, podríamos crear un TAD propio, por ejemplo una baraja de cartas.
+Por ejemplo, podríamos crear un tipo de dato propio, por ejemplo una baraja de cartas.
 Podríamos establecer un orden según Ranks y Suits, creando una instancia de Ord para Card. Al hacer esto, ya podríamos tomar una lsita de cartas y ordenarlas con los algoritmos ya implementados.
 
 
@@ -30,7 +31,7 @@ El enfoque funcional es ideal para los algoritmos _Quick Sort_ y _Merge Sort_, q
 
 Por otro lado, al no trabajar con variables globales, ni tener una interacción con el usuario, se garantiza la inexistencia de efectos secundarios. Esto significa que para una función se puede asegurar el mismo resultado para los mismo parámetros. Esto se da gracias al encapsulamiento de las funciones. No tienen ninguna interacción con el entorno, salvo su parámetro de entrada (para funciones puras) y su valor devuelto.
 
-Al no utilizar variables (el let no ocupa espacio en memoria, simplemente hace el codigo más legible), el programa no ocupa espacio innecesario en memoria.
+Al no utilizar variables (las "variables" declaradas mediante where no ocupa espacio en memoria, simplemente hace el codigo más legible), el programa no ocupa espacio innecesario en memoria.
 
 #### Desventajas
 

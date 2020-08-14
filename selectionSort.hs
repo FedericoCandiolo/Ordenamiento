@@ -3,6 +3,7 @@ El Selection Sort es un algoritmo de ordenacion de complejidad O = (n^2)
 Se busca el elemento mínimo de una lista y se ubica en la primera posición. Luego se realiza lo mismo desde los siguientes elementos, hasta completar la lista.
 -}
 
+
 selectionSort :: (Ord a) => [a] -> [a]
 selectionSort [] = []
 selectionSort [x] = [x]

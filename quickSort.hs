@@ -4,6 +4,7 @@ Se toma como pivote el primer elemento de la lista, y se ponen a su izquierda lo
 Luego se aplica el Quick Sort a las dos nuevas listas, hasta que queden listas vacías.
 -}
 
+
 quickSort :: (Ord a) => [a] -> [a]
 quickSort [] = []
 quickSort xs = (quickSort $ filter (< piv) t) ++ [piv] ++ (quickSort $ filter (>= piv) t)
